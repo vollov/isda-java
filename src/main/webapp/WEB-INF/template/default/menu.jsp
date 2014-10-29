@@ -7,11 +7,11 @@
 			<ul class="nav navbar-nav">
 				<li>
 					<spring:url value="/home" var="homeUrl" htmlEscape="true"/>
-					<a <c:if test="${page == 'home'}">class="active"</c:if> href="${homeUrl}">Home</a>
+					<a <c:if test="${page == 'home'}">class="active"</c:if> href="${homeUrl}"><spring:message code="menu.home" /></a>
 				</li>
 				<li>
 					<spring:url value="/about" var="aboutUrl" htmlEscape="true"/>
-					<a <c:if test="${page == 'about'}">class="active"</c:if> href="${aboutUrl}">About</a>
+					<a <c:if test="${page == 'about'}">class="active"</c:if> href="${aboutUrl}"><spring:message code="menu.about" /></a>
 				</li>
 			</ul>
 		</div>
@@ -21,8 +21,8 @@
 <div id="breadcrumb">
 	<div class="container">
 		<ol class="breadcrumb">
-			<li><a href="${homeUrl}">Home</a></li>
-			<li>${page}</li>
+			<li><a href="${homeUrl}"><spring:message code="menu.home" /></a></li>
+			<li>${pageText}</li>
 		</ol>
 	</div>
 </div>

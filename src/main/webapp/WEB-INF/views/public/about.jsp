@@ -5,10 +5,7 @@
         <div class="body">
             <h1> Guanyu -- ${page}</h1>
  
-            <p><spring:message code="about.p1" /></p>
-            <p><spring:message code="about.p2" /></p>
-            <p><spring:message code="about.p3" /></p>
-            <p><spring:message code="about.p4" /></p>
+            <spring:message code="content.about" />
             
         </div>
     </tiles:putAttribute>

@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PageController {
 
 	private static final Logger logger = Logger.getLogger(PageController.class);
-//	private static final Logger logger = LoggerFactory
-//			.getLogger(PageController.class);
 
+	@Autowired
+	private ReloadableResourceBundleMessageSource messageSource;
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -35,15 +38,20 @@ public class PageController {
 
 		model.addAttribute("serverTime", formattedDate);
 		model.addAttribute("page", "home");
+		String pageText = messageSource.getMessage("menu.home", null, locale);
+		model.addAttribute("pageText", pageText);
+		
 		return "public/home";
 	}
 
 	@RequestMapping(value = "/about", method = RequestMethod.GET)
 	public String about(Locale locale, Model model) {
 		logger.info("about --> client locale is "+ locale);
-
 		logger.info("About page !");
+		
 		model.addAttribute("page", "about");
+		String pageText = messageSource.getMessage("menu.about", null, locale);
+		model.addAttribute("pageText", pageText);
 		return "public/about";
 	}
 }
