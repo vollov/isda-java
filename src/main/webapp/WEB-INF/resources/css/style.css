@@ -10,8 +10,8 @@ body {
 
 #head-banner {
 	height: 120px;
-	padding-left: 15px;
-	padding-right: 15px;
+	/*padding-left: 15px;
+	padding-right: 15px;*/
 }
 
 #lang-bar {
@@ -57,7 +57,7 @@ body {
 	color: #FFF;  /*Sets the text hover color on navbar*/
 	background-color: #243850;
 	font-weight: bold;
-	font-size: 110%;
+	/* font-size: 110%; */
 }
 
 #nav-menu .navbar-default .navbar-nav > li > a,

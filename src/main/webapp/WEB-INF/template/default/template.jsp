@@ -4,10 +4,17 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title><spring:message code="page.title" /></title>
-    <link href="resources/css/style.css" rel="stylesheet" />
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="resources/images/favicon.ico" rel="shortcut icon">
-    <link href="resources/css/style.css" rel="stylesheet" />
+    
+    <spring:url value="/static/css/style.css" var="site_style"/>
+    <spring:url value="/static/css/bootstrap.min.css" var="bootstrap_style"/>
+    <spring:url value="/static/images/favicon.ico" var="favicon"/>
+    <spring:url value="/static/lib/jquery/jquery.min.js" var="js_jquery"/>
+    <spring:url value="/static/lib/twitter/bootstrap.min.js" var="js_bootstrap"/>
+    
+    <link href="${bootstrap_style}" rel="stylesheet" />
+    <link href="${site_style}" rel="stylesheet" />
+    <link href="${favicon}" rel="shortcut icon">
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -29,8 +36,8 @@
 		<tiles:insertAttribute name="footer" />
 	</div>
 
-	<script src="resources/lib/jquery/jquery.min.js"></script>
+	<script src="${js_jquery}"></script>
 	<!-- UI Libs   -->
-	<script src="resources/lib/twitter/bootstrap.min.js"></script>
+	<script src="${js_bootstrap}"></script>
 </body>
 </html>

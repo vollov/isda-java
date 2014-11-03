@@ -37,7 +37,11 @@ dependencies {
 	compile 'org.apache.tiles:tiles-jsp:3.0.4'
 	runtime 'log4j:log4j:1.2.17'
 	runtime 'jstl:jstl:1.2'
+	
+	testCompile 'com.github.springtestdbunit:spring-test-dbunit:1.1.0'
+	testCompile 'org.dbunit:dbunit:2.4.9'
 	testCompile 'junit:junit:4.11'
+	testCompile 'org.springframework:spring-test:4.0.5.RELEASE'
 }
 
 test {
