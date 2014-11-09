@@ -11,7 +11,7 @@
 	</appender>
 
 	<appender name="default.file" class="org.apache.log4j.FileAppender">
-		<param name="file" value="d:\\log\\isda.log" />
+		<param name="file" value="c:\\log\\isda.log" />
 		<param name="append" value="true" />
 		<param name="threshold" value="info" />
 		<layout class="org.apache.log4j.PatternLayout">
@@ -53,8 +53,9 @@
 
 	<!-- Root Logger -->
 	<root>
-		<priority value="warn" />
+		<priority value="error" />
 		<appender-ref ref="console" />
+		<appender-ref ref="default.file" />
 	</root>
 	
 </log4j:configuration>

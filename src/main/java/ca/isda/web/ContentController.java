@@ -33,40 +33,27 @@ public class ContentController {
 	@Autowired
 	private ContentService contentService;
 	
-	@RequestMapping("/admin/content/list")
+	@RequestMapping("/contents")
 	public String list(Locale locale, Model model) {
 		logger.info("content list --> client locale is "+ locale);
 		
 		List<Content> contents = contentService.findAll();
 		logger.info("[Controller] Content listing " + contents.size());
 		model.addAttribute("contents", contents);
-		return "public/content/list";
+		return "content/list";
 	}
 
-	@RequestMapping(value = "/admin/content/show/{code}/{locale}", method = RequestMethod.GET)
+	@RequestMapping(value = "/content/{code}/{locale}", method = RequestMethod.GET)
 	public String show(@PathVariable("code") String code,@PathVariable("locale") String locale, Model model) {
 		logger.info(String.format("content show --> code=%s, locale=%s ",code,locale));
 		Content content = contentService.findByKey(code, locale);
 		model.addAttribute("content", content);
-		return "public/content/show";
+		return "content/show";
 	}
 	
-	@RequestMapping(value = "/admin/content/edit/{code}/{locale}", method = RequestMethod.GET)
-	public String edit(@PathVariable("code") String code,@PathVariable("locale") String locale, Model model) {
-		logger.info(String.format("content show --> code=%s, locale=%s ",code,locale));
-		Content content = contentService.findByKey(code, locale);
-		model.addAttribute("content", content);
-		return "public/content/form";
-	}
+
 	
-	@RequestMapping(value = "/admin/content/edit/{code}/{locale}", params = "form", method = RequestMethod.POST)
-	public String save(@Valid Content content, BindingResult bindingResult,
-			Model model, HttpServletRequest httpServletRequest,
-			RedirectAttributes redirectAttributes, Locale locale) {
-		
-		contentService.save(content);
-		return "redirect:/public/content/list";
-	}
+
 	
 //	@RequestMapping(value = "/admin/content/save", method = RequestMethod.POST)
 //	

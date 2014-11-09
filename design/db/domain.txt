@@ -1,0 +1,21 @@
+event 1-* picture
+
+event
+id
+date_time
+orgnizer
+description
+address
+slug
+enable
+description text
+
+picture
+id
+event_id
+path = evnet_id\picture (from the path root)
+file_name
+uploaded date
+enable
+
+spring how to upload a picture.

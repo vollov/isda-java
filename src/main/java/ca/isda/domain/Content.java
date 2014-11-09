@@ -4,7 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Entity to store i18n contents.
@@ -21,7 +23,8 @@ public class Content {
 	@Column(name = "locale")
 	private String locale;
 
-	@Column(name = "content")
+	@Lob
+	@Column(name = "content", columnDefinition="TEXT")
 	private String content;
 
 	public String getCode() {
@@ -48,6 +51,11 @@ public class Content {
 		this.content = content;
 	}
 
+	@Transient
+	public boolean isNew() {
+		return (this.code == null || this.locale == null);
+	}
+	
 	public String toString() {
 		return String.format("Content[code=%s, locale=%s, content=%s]",
 				this.code, this.locale, this.content);

@@ -32,10 +32,10 @@ public class StaffServiceImpl implements StaffService {
 	public Staff save(Staff staff) {
 		if (staff.getId() != null) {
 			logger.info("Inserting new staff");
-            this.entityManager.merge(staff);
+            entityManager.merge(staff);
         } else {
         	logger.info("Updating existing staff");
-            this.entityManager.persist(staff);
+            entityManager.persist(staff);
         }
 		
 		logger.info("Staff saved with id: " + staff.getId());
@@ -44,7 +44,7 @@ public class StaffServiceImpl implements StaffService {
 
 	@Override
 	public Staff findById(long id) {
-		return this.entityManager.find(Staff.class, id);
+		return entityManager.find(Staff.class, id);
 	}
 
 }

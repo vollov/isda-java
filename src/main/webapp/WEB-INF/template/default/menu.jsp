@@ -13,6 +13,16 @@
 					<spring:url value="/about" var="aboutUrl" htmlEscape="true"/>
 					<a <c:if test="${page == 'about'}">class="active"</c:if> href="${aboutUrl}"><spring:message code="menu.about" /></a>
 				</li>
+				
+				<li>
+					<spring:url value="/staffs" var="staffsUrl" htmlEscape="true"/>
+					<a href="${staffsUrl}"><spring:message code="menu.staffs" /></a>
+				</li>
+				
+				<li>
+					<spring:url value="/contents" var="contentsUrl" htmlEscape="true"/>
+					<a href="${contentsUrl}"><spring:message code="menu.contents" /></a>
+				</li>
 			</ul>
 		</div>
 	</div>

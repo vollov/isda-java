@@ -2,8 +2,8 @@ package ca.isda.web;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.petclinic.Owner;
-import org.springframework.samples.petclinic.validation.OwnerValidator;
+//import org.springframework.samples.petclinic.Owner;
+//import org.springframework.samples.petclinic.validation.OwnerValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,9 +16,10 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import ca.isda.domain.Staff;
 import ca.isda.service.StaffService;
+import ca.isda.validation.StaffValidator;
 
 @Controller
-@RequestMapping("/admin/staff/{id}/edit")
+@RequestMapping("/staff/{id}/edit")
 @SessionAttributes(types = Staff.class)
 public class EditStaffForm {
 
@@ -32,19 +33,19 @@ public class EditStaffForm {
 		//Owner owner = this.clinic.loadOwner(ownerId);
 		Staff staff = staffService.findById(id);
 		model.addAttribute(staff);
-		return "public/staff/form";
+		return "staff/form";
 	}
 
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(method = RequestMethod.POST)
 	public String processSubmit(@ModelAttribute Staff staff, BindingResult result, SessionStatus status) {
 		new StaffValidator().validate(staff, result);
 		if (result.hasErrors()) {
-			return "public/staff/form";
+			return "staff/form";
 		}
 		else {
-			this.clinic.storeOwner(owner);
+			staffService.save(staff);
 			status.setComplete();
-			return "redirect:/public/staff/" + owner.getId();
+			return "redirect:/staff/" + staff.getId();
 		}
 	}
 }

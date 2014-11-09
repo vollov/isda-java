@@ -24,3 +24,7 @@ http://docs.jboss.org/hibernate/core/4.0/manual/en-US/html/persistent-classes.ht
         </list>
     </property>
 </bean>
+
+
+
+		

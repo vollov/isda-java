@@ -1,3 +1,4 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,23 +7,29 @@
     <tiles:putAttribute name="body">
         <div class="body">
             <h1>Contents List</h1>
-	        <h2><a href="new">New Content</a></h2>
+	        <h2><a href="staff/new">New Staff</a></h2>
 	        
         	<table border="1">
         		<th>id</th>
-	        	<th>code</th>
-	        	<th>locale</th>
-	        	<th>Content</th>
+	        	<th>first name</th>
+	        	<th>last name</th>
+	        	<th>phone</th>
+	        	<th>email</th>
+	        	<th>title</th>
 	        	<th>Actions</th>
 	        	
-				<c:forEach var="content" items="${contents}" varStatus="status">
+				<c:forEach var="staff" items="${staffs}" varStatus="status">
 	        	<tr>
 	        		<td>${status.index + 1}</td>
-	        		<td>${content.code}</td>
-					<td>${content.locale}</td>
-					<td>${content.content}</td>
+	        		<td>${staff.firstName}</td>
+	        		<td>${staff.lastName}</td>
+					<td>${staff.phone}</td>
+					<td>${staff.email}</td>
+					<td>${staff.title}</td>
 					<td>
-						<a href="edit/${content.code}/${content.locale}">Edit</a>
+						<a href="staff/${staff.id}">Show</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="staff/${staff.id}/edit">Edit</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<a href="delete?id=${content.code}">Delete</a>
 					</td>

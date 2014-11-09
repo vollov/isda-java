@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -79,6 +80,11 @@ public class Staff {
 	
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	@Transient
+	public boolean isNew() {
+		return (this.id == null);
 	}
 	
 	public String toString() {
