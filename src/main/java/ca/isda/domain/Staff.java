@@ -21,6 +21,13 @@ public class Staff {
 	private String phone;
 	private String email;
 	private String title;
+	private int displayId;
+	private boolean active; 
+	
+	public Staff(){
+		this.displayId = 0;
+		this.active = false;
+	}
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -82,6 +89,24 @@ public class Staff {
 		this.title = title;
 	}
 	
+	@Column(name = "display_id")
+	public int getDisplayId() {
+		return displayId;
+	}
+
+	public void setDisplayId(int displayId) {
+		this.displayId = displayId;
+	}
+
+	@Column(name = "active")
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	@Transient
 	public boolean isNew() {
 		return (this.id == null);

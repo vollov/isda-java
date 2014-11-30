@@ -1,0 +1,31 @@
+2014-11-15
+1) add static pages  (OK)
+2) add home page with staff list (OK)
+3) add Event, Picture entity (OK)
+4) add Event, Picture CRUD, partial view update?
+5) add Events in home page
+
+
+staff [picture name] validate pic size? 
+1. unique name
+2. separated upload page
+
+Event 
+1) how to store address
+2) how to add pictures?
+
+@Embeddable @Access(AccessType.FIELD) 
+public class Address {     
+private String street;     
+private String city;     
+private String state;     
+@Column(name="ZIP_CODE")     
+private String zip;     // ... }
+
+@Entity public class Employee {     
+@Id private int id;     
+@ManyToOne     
+@JoinColumn(name="DEPT_ID")     
+private Department department;    
+ // ... }
+

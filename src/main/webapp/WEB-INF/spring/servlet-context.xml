@@ -14,7 +14,8 @@
      
     <!-- Used to serve static resources like css, images and javascript files  <mvc:default-servlet-handler/>  -->
     <mvc:resources mapping="/static/**" location="/WEB-INF/resources/" />
-
+	<mvc:resources mapping="/uploads/**" location="file:/c:/cp/"/>
+	
 	<mvc:interceptors>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
 			p:paramName="lang" />

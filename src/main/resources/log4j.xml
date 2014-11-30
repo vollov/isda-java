@@ -13,7 +13,7 @@
 	<appender name="default.file" class="org.apache.log4j.FileAppender">
 		<param name="file" value="c:\\log\\isda.log" />
 		<param name="append" value="true" />
-		<param name="threshold" value="info" />
+		<param name="threshold" value="debug" />
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d{ISO8601} %-5p [%c{1}] - %m%n" />
 		</layout>
@@ -21,7 +21,7 @@
 
 	<!-- Application Loggers -->
 	<logger name="ca.isda">
-		<level value="info" />
+		<level value="debug" />
 		<appender-ref ref="console" />
 		<appender-ref ref="default.file" />
 	</logger>

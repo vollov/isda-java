@@ -2,9 +2,25 @@
 	<staff id="1" first_name="Jerry" last_name="Zhang" phone="647-975-2503" email="jerryzhang@isda.ca" title="会长" />
 	<staff id="2" first_name="绣萍" last_name="王" phone="416-522-6808" email="xiupinwang@isda.ca" title="副会长" />
 	<staff id="3" first_name="Rogan" last_name="Mo" phone="519-781-8735" email="roganmo@isda.ca" title="副会长" />
+	<staff id="4" first_name="Judy" last_name="Xie" phone="647-712-6858" email="judyxie@isda.ca" title="副会长" />
+	<staff id="5" first_name="Jack" last_name="Nan" phone="416-818-6852" email="jacknan@isda.ca" title="副会长兼协会地产部主席" />
+	<staff id="6" first_name="Cathy" last_name="Shen" phone="519-319-1833" email="cathyshen@isda.ca" title="大学生与青年服务部部长" />
+	<staff id="7" first_name="Felix" last_name="Du" phone="647-505-2347" email="felixdu@isda.ca" title="银行咨询与服务部部长" />
+	<staff id="8" first_name="Vanessa" last_name="Zhang" phone="647-627-0388" email="vanessazhang@isda.ca" title="大学生与青年市场开发部部长" />
 	
-	<t_i18n_vertical code="page.about" locale="en" content="about - AAA"/>
-	<t_i18n_vertical code="page.about" locale="zh" content="关于移民"/>
-	<t_i18n_vertical code="page.home" locale="en" content="home - BBB"/>
+	<content code="page.about" locale="en" content="about"/>
+	<content code="page.about" locale="zh" content="关于我们"/>
+	<content code="page.home" locale="en" content="home"/>
+	<content code="page.home" locale="zh" content="首页"/>
+	<content code="page.services" locale="en" content="services"/>
+	<content code="page.services" locale="zh" content="协会优势"/>
+	<content code="page.education" locale="en" content="Education"/>
+	<content code="page.education" locale="zh" content="安省教育介绍"/>
+	<content code="page.investments" locale="en" content="Investments"/>
+	<content code="page.investments" locale="zh" content="安省投资移民合作项目"/>
+	<content code="page.events" locale="en" content="Events"/>
+	<content code="page.events" locale="zh" content="协会动态"/>
+	<content code="page.activities" locale="en" content="Social Activities"/>
+	<content code="page.activities" locale="zh" content="协会活动"/>
 	
 </dataset>

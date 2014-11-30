@@ -1,3 +1,4 @@
+<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -49,6 +50,18 @@
         Title: <form:errors path="title" cssClass="errors"/>
         <br/>
         <form:input path="title" size="30" maxlength="80"/>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        Order: <form:errors path="displayId" cssClass="errors"/>
+        <br/>
+        <form:input path="displayId" size="30" maxlength="80"/>
+      </th>
+    </tr>
+        <tr>
+      <th>
+        <form:checkbox path="active"/> Is Active Staff
       </th>
     </tr>
     <tr>

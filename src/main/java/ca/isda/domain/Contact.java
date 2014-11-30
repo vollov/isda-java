@@ -26,13 +26,15 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 @Table(name = "contact")
 public class Contact implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private int version;
 	private String firstName;
 	private String lastName;
 	private DateTime birthDate;
 	private String description;
-	private byte[] photo;
+//	private byte[] photo;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -97,16 +99,16 @@ public class Contact implements Serializable {
 		this.description = description;
 	}
 
-	@Basic(fetch = FetchType.LAZY)
-	@Lob
-	@Column(name = "PHOTO")
-	public byte[] getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(byte[] photo) {
-		this.photo = photo;
-	}
+//	@Basic(fetch = FetchType.LAZY)
+//	@Lob
+//	@Column(name = "PHOTO")
+//	public byte[] getPhoto() {
+//		return photo;
+//	}
+//
+//	public void setPhoto(byte[] photo) {
+//		this.photo = photo;
+//	}
 
 	@Transient
 	public String getBirthDateString() {

@@ -12,7 +12,7 @@ import javax.persistence.Transient;
  * Entity to store i18n contents.
  */
 @Entity
-@Table(name = "t_i18n_vertical")
+@Table(name = "content")
 @IdClass(ContentPK.class)
 public class Content {
 	@Id

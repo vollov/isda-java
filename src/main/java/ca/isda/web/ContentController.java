@@ -50,47 +50,4 @@ public class ContentController {
 		model.addAttribute("content", content);
 		return "content/show";
 	}
-	
-
-	
-
-	
-//	@RequestMapping(value = "/admin/content/save", method = RequestMethod.POST)
-//	
-//	public ModelAndView save(@ModelAttribute User user) {
-//		userDao.saveOrUpdate(user);
-//		return new ModelAndView("redirect:/");
-//	}
-	
-//	@RequestMapping(value = "/new", method = RequestMethod.GET)
-//	public ModelAndView newUser() {
-//		ModelAndView model = new ModelAndView("UserForm");
-//		model.addObject("user", new User());
-//		return model;		
-//	}
-//	
-
-	
-//	@RequestMapping(value="/tasks/{taskId}/{taskStatus}",method = RequestMethod.POST,headers="Accept=application/json")
-//	36
-//	  public List<task> changeTaskStatus(@PathVariable int taskId,@PathVariable String taskStatus) throws ParseException {
-//	37
-//	   taskmanagerservice.changeTaskStatus(taskId,taskStatus);  
-//	38
-//	   return taskmanagerservice.getAllTasks();
-//	39
-//	    
-//	40
-//	  }
-
-	  
-//	
-//	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-//	public ModelAndView deleteUser(HttpServletRequest request) {
-//		int userId = Integer.parseInt(request.getParameter("id"));
-//		userDao.delete(userId);
-//		return new ModelAndView("redirect:/");		
-//	}
-//	
-
 }

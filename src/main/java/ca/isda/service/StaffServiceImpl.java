@@ -27,6 +27,12 @@ public class StaffServiceImpl implements StaffService {
 		List<Staff> staffs = query.getResultList();
 		return staffs;
 	}
+	
+	public List<Staff> getManagementTeam() {
+		TypedQuery<Staff> query = entityManager.createQuery("SELECT s FROM Staff s WHERE s.active=true ORDER BY s.displayId", Staff.class);
+		List<Staff> staffs = query.getResultList();
+		return staffs;
+	}
 
 	@Override
 	public Staff save(Staff staff) {

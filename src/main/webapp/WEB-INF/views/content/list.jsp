@@ -12,7 +12,8 @@
         		<th>id</th>
 	        	<th>code</th>
 	        	<th>locale</th>
-	        	<th>Content</th>
+	        	<!-- <th>Content</th> -->
+	        	
 	        	<th>Actions</th>
 	        	
 				<c:forEach var="content" items="${contents}" varStatus="status">
@@ -20,7 +21,8 @@
 	        		<td>${status.index + 1}</td>
 	        		<td>${content.code}</td>
 					<td>${content.locale}</td>
-					<td>${content.content}</td>
+					<!-- <td>${content.content}</td> -->
+					
 					<td>
 						<a href="content/${content.code}/${content.locale}">Show</a>
 						&nbsp;&nbsp;&nbsp;&nbsp;

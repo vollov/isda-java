@@ -25,6 +25,15 @@ http://docs.jboss.org/hibernate/core/4.0/manual/en-US/html/persistent-classes.ht
     </property>
 </bean>
 
-
+==========
+				<li>
+					<spring:url value="/staffs" var="staffsUrl" htmlEscape="true"/>
+					<a href="${staffsUrl}"><spring:message code="menu.staffs" /></a>
+				</li>
+				
+				<li>
+					<spring:url value="/contents" var="contentsUrl" htmlEscape="true"/>
+					<a href="${contentsUrl}"><spring:message code="menu.contents" /></a>
+				</li>
 
 		

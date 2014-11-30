@@ -10,4 +10,6 @@ public interface StaffService {
 	public Staff save(Staff staff);
 
 	public Staff findById(long id);
+	
+	public List<Staff> getManagementTeam();
 }

@@ -5,17 +5,15 @@
 <tiles:insertDefinition name="defaultTemplate">
     <tiles:putAttribute name="body">
         <div class="body">
-            <h1>Staff Show</h1>
-	        <ul>
-	        	<li>${staff.firstName}</li>
-	        	<li>${staff.lastName}</li>
-	        	<li>${staff.phone}</li>
-	        	<li>${staff.email}</li>
-	        	<li>${staff.title}</li>
-	        	<li>${staff.displayId}</li>
+            <h1>Event Show</h1>
+	        <ul>    
+        	    <li>${event.address.street}</li>
+        		<li>${event.description}</li>
+				<li>${event.eventTime}</li>
+				<li>${event.active}</li>	
 	        	<li>
 		        	<c:choose>
-						<c:when test="${staff.active}">Active</c:when>
+						<c:when test="${event.active}">Active</c:when>
 						<c:otherwise>Disabled</c:otherwise>
 					</c:choose>
 				</li>
