@@ -23,7 +23,9 @@
 	<logger name="ca.isda">
 		<level value="debug" />
 		<appender-ref ref="console" />
+		<!--
 		<appender-ref ref="default.file" />
+		  -->
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -54,7 +56,9 @@
 	<!-- Root Logger -->
 	<root>
 		<priority value="error" />
+		<!-- logg all packages
 		<appender-ref ref="console" />
+		 -->
 		<appender-ref ref="default.file" />
 	</root>
 	

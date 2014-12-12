@@ -9,7 +9,7 @@ public interface PictureService {
 
 	public List<Picture> findActivePictureByEventId(long id);
 	
-	public Picture save(Picture address);
+	public Picture save(Picture picture);
 
 	public Picture findById(long id);
 }

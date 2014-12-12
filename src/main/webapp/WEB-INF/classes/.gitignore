@@ -1,0 +1,8 @@
+/ca
+/jdbc.properties
+/jpa-context.xml
+/jpa-tx-context.xml
+/log4j.xml
+/test-jdbc.properties
+/test-jpa-context.xml
+/test-jpa-tx-context.xml

@@ -20,9 +20,9 @@
 				<c:forEach var="picture" items="${pictures}" varStatus="status">
 	        	<tr>
 	        		<td>${status.index + 1}</td>
-	        		<td>${picture.address.street}</td>
+	        		<td>${picture.event.id}</td>
 	        		<td>${picture.description}</td>
-					<td>${picture.pictureTime}</td>
+					<td>${picture.displayId}</td>
 					<td>${picture.active}</td>
 					<td>
 						<a href="picture/${picture.id}">Show</a>
