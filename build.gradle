@@ -4,10 +4,41 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'application'
 apply plugin: 'jetty'
-
+apply plugin: 'eclipse-wtp'
 
 group = 'org.demo.spring.lab.tiles3'
 version = '1.0'
+
+eclipse {
+
+  //if you want parts of paths in resulting file(s) to be replaced by variables (files):
+  pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat')
+
+  wtp {
+    component {
+      contextPath = 'isda'
+
+      deployName = 'isda'
+
+      //you can alter the wb-resource elements. sourceDirs is a ConventionProperty.
+      //non-existing source dirs won't be added to the component file.
+      sourceDirs += file('deploy')
+
+      //you can alter the files are to be transformed into dependent-module elements:
+      //plusConfigurations += [ configurations.someInterestingConfiguration ]
+
+      //or whose files are to be excluded from dependent-module elements:
+      //minusConfigurations += configurations.anotherConfiguration
+
+      //you can add a wb-resource elements; mandatory keys: 'sourcePath', 'deployPath':
+      //if sourcePath points to non-existing folder it will *not* be added.
+      resource sourcePath: 'extra/resource', deployPath: 'deployment/resource'
+
+      //you can add a wb-property elements; mandatory keys: 'name', 'value':
+      property name: 'moodOfTheDay', value: ':-D'
+    }
+  }
+}
 
 repositories {
 	mavenCentral()
